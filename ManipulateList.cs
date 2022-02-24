@@ -8,8 +8,8 @@ namespace LinkedList
 {
     internal class ManipulateList
     {
-
-        public Node head;
+        public Node tail;
+        Node temp;
 
         public void Insert(int input)
         {
@@ -17,39 +17,19 @@ namespace LinkedList
             newNode.data = input;
             newNode.next = null;
 
-            if (head != null)
-            {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = newNode;
-            }
-            else
-            {
-                head = newNode;
-            }
+            temp = newNode;
+            temp.next = tail;
+            tail = temp;
         }
         public void Display()
         {
-            if (head == null)
+            Console.WriteLine(temp.data);
+            while (temp.next != null)
             {
-                Console.WriteLine("list is empty");
-            }
-            else
-            {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    Console.WriteLine(temp.data);
-                    temp = temp.next;
-                }
+                temp = temp.next;
                 Console.WriteLine(temp.data);
             }
         }
-
     }
-
 }
 
