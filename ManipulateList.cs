@@ -11,21 +11,45 @@ namespace LinkedList
 
         public Node head;
 
-        public void Insert()
+        public void Insert(int input)
         {
             Node newNode = new Node();
-         
+            newNode.data = input;
+            newNode.next = null;
 
-            newNode.data = 56;
-            Node temp = newNode;
-            newNode.data = 30;
-           temp.next = newNode;
-            temp = temp.next;
-            newNode.data = 70;
-            temp.next = newNode;
-            Console.WriteLine(temp.data);
-
+            if (head != null)
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = newNode;
+            }
+            else
+            {
+                head = newNode;
+            }
+        }
+        public void Display()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("list is empty");
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    Console.WriteLine(temp.data);
+                    temp = temp.next;
+                }
+                Console.WriteLine(temp.data);
+            }
         }
 
     }
+
 }
+
