@@ -10,14 +10,13 @@ namespace LinkedList
     {
 
         public Node head;
-        public Node tail = null;
         public void Insert(int input)
         {
             Node newNode = new Node();
             newNode.data = input;
             newNode.next = null;
 
-            if (head != null && newNode.data != 70)
+            if (head != null )
             {
                 Node temp = head;
                 while (temp.next != null)
@@ -25,11 +24,6 @@ namespace LinkedList
                     temp = temp.next;
                 }
                 temp.next = newNode;
-                temp.next.next = tail;
-            }
-            else if (newNode.data == 70)
-            {
-                tail = newNode;
             }
             else
             {
@@ -37,6 +31,13 @@ namespace LinkedList
             }
 
         }
+
+        public void DeleteFirst()
+        {
+            Node temp = head;
+            head = head.next;
+        }
+
 
         public void Display()
         {

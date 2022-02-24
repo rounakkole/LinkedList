@@ -12,6 +12,7 @@ namespace LinkedList
             manipulateList.Insert(56);
             manipulateList.Insert(70);
             manipulateList.Insert(30);
+            manipulateList.DeleteFirst();
             manipulateList.Display();
 
         }
