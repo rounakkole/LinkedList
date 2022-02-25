@@ -31,16 +31,20 @@ namespace LinkedList
             }
         }
 
-        public void DeleteLast()
+        public void search(int input)
         {
             Node temp = head;
-            Node prev = head;
+            int position = 0;
             while (temp.next != null)
             {
-                prev = temp;
+                if (temp.data == input)
+                {
+                    Console.WriteLine($"search: {temp.data}     node: {position}");
+                    break;
+                }
                 temp = temp.next;
+                position++;
             }
-            prev.next = null;
         }
 
         public void Display()
