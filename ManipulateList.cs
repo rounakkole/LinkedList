@@ -10,9 +10,11 @@ namespace LinkedList
     {
 
         public Node head;
+
         public void Insert(int input)
         {
             Node newNode = new Node();
+
             newNode.data = input;
             newNode.next = null;
 
@@ -31,20 +33,22 @@ namespace LinkedList
             }
         }
 
-        public void search(int input)
+        public void SearchInsert(int search, int input)
         {
+            Node newNode = new Node();
+            newNode.data = input;
+
             Node temp = head;
-            int position = 0;
-            while (temp.next != null)
+            Node prev = head;
+            while (temp.data != search)
             {
-                if (temp.data == input)
-                {
-                    Console.WriteLine($"search: {temp.data}     node: {position}");
-                    break;
-                }
+                prev = temp;
                 temp = temp.next;
-                position++;
             }
+            prev = temp;
+            temp = temp.next;
+            prev.next = newNode;
+            prev.next.next = temp;
         }
 
         public void Display()
