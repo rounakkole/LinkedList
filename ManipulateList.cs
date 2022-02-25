@@ -16,7 +16,7 @@ namespace LinkedList
             newNode.data = input;
             newNode.next = null;
 
-            if (head != null )
+            if (head != null)
             {
                 Node temp = head;
                 while (temp.next != null)
@@ -29,15 +29,19 @@ namespace LinkedList
             {
                 head = newNode;
             }
-
         }
 
-        public void DeleteFirst()
+        public void DeleteLast()
         {
             Node temp = head;
-            head = head.next;
+            Node prev = head;
+            while (temp.next != null)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            prev.next = null;
         }
-
 
         public void Display()
         {
@@ -56,6 +60,5 @@ namespace LinkedList
                 Console.WriteLine(temp.data);
             }
         }
-
     }
 }

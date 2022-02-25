@@ -10,9 +10,9 @@ namespace LinkedList
             Console.WriteLine("Data Structure");
             ManipulateList manipulateList = new ManipulateList();
             manipulateList.Insert(56);
-            manipulateList.Insert(70);
             manipulateList.Insert(30);
-            manipulateList.DeleteFirst();
+            manipulateList.Insert(70);
+            manipulateList.DeleteLast();
             manipulateList.Display();
 
         }
