@@ -13,7 +13,7 @@ namespace LinkedList
             manipulateList.Insert(30);
             manipulateList.Insert(40);
             manipulateList.Insert(70);
-            manipulateList.SearchDelete(40);
+            manipulateList.SortedLink();
             manipulateList.Display();
 
         }

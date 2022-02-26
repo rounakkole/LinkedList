@@ -8,7 +8,6 @@ namespace LinkedList
 {
     internal class ManipulateList
     {
-
         public Node head;
 
         public void Insert(int input)
@@ -33,14 +32,25 @@ namespace LinkedList
             }
         }
 
-        public void SearchDelete(int search)
+        public void SortedLink()
         {
-            Node temp = head;
-            while (temp.next.data != search)
+            Node prev = head;
+            int nodeData;
+            while (prev != null)
             {
-                temp = temp.next;
+                Node temp = prev;
+                while (temp != null)
+                {
+                    if (prev.data.CompareTo(temp.data) > 0)
+                    {
+                        nodeData = prev.data;
+                        prev.data = temp.data;
+                        temp.data = nodeData;
+                    }
+                    temp = temp.next;
+                }
+                prev = prev.next;
             }
-            temp.next = temp.next.next;
         }
 
         public void Display()
