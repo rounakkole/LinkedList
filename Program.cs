@@ -11,8 +11,9 @@ namespace LinkedList
             ManipulateList manipulateList = new ManipulateList();
             manipulateList.Insert(56);
             manipulateList.Insert(30);
+            manipulateList.Insert(40);
             manipulateList.Insert(70);
-            manipulateList.SearchInsert(30, 40);
+            manipulateList.SearchDelete(40);
             manipulateList.Display();
 
         }

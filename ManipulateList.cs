@@ -33,22 +33,14 @@ namespace LinkedList
             }
         }
 
-        public void SearchInsert(int search, int input)
+        public void SearchDelete(int search)
         {
-            Node newNode = new Node();
-            newNode.data = input;
-
             Node temp = head;
-            Node prev = head;
-            while (temp.data != search)
+            while (temp.next.data != search)
             {
-                prev = temp;
                 temp = temp.next;
             }
-            prev = temp;
-            temp = temp.next;
-            prev.next = newNode;
-            prev.next.next = temp;
+            temp.next = temp.next.next;
         }
 
         public void Display()
