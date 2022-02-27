@@ -13,19 +13,21 @@ namespace LinkedList
 
         public void Insert()
         {
-            Node newNode = new Node();
-         
+            Node start = null;
+            Node node1 = new Node();
+            node1.data = 56;
+            start = node1;
 
-            newNode.data = 56;
-            Node temp = newNode;
-            newNode.data = 30;
-           temp.next = newNode;
-            temp = temp.next;
-            newNode.data = 70;
-            temp.next = newNode;
-            Console.WriteLine(temp.data);
+            Node node2 = new Node();
+            node2.data = 30;
+            node2.next = node1;
+            start = node2;
 
+            Node node3 = new Node();
+            node3.data = 70;
+            node3.next = node2;
+            start = node3;
+            head = start;
         }
-
     }
 }

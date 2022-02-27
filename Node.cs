@@ -10,5 +10,6 @@ namespace LinkedList
     {
         public int data;
         public Node next;
+
     }
 }
